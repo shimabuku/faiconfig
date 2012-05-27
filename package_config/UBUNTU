@@ -1,13 +1,10 @@
 PACKAGES aptitude I386
 linux-image-generic initramfs-tools
-memtest86+
-
-PACKAGES aptitude CHROOT
-linux-image-generic-
+#memtest86+
 
 PACKAGES aptitude AMD64
 linux-image-generic initramfs-tools
-memtest86+
+#memtest86+
 
 PACKAGES aptitude DHCPC
 isc-dhcp-client
