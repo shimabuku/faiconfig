@@ -15,6 +15,8 @@ GROOT=$($ROOTCMD grub-probe -tdrive -d $BOOT_DEVICE)
 # see http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=606035
 GROOT=$(echo $GROOT | sed 's:md/:md:g')
 
+fcopy -iv /etc/default/grub
+
 $ROOTCMD grub-install --no-floppy "$GROOT"
 echo "Grub installed on $BOOT_DEVICE = $GROOT"
 

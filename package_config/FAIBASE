@@ -20,3 +20,5 @@ console-setup kbd
 pciutils usbutils
 #lvm2
 sudo
+net-tools
+vim
