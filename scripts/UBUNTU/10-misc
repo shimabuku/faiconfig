@@ -1,0 +1,7 @@
+#! /bin/bash
+
+# (c) Thomas Lange, 2001-2010, lange@debian.org
+
+# add a demo user account
+$ROOTCMD adduser --disabled-login --gecos "fai demo user" hccitc
+$ROOTCMD usermod -p "$USERPW" hccitc
