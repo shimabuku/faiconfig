@@ -4,9 +4,9 @@
 
 case $HOSTNAME in
 	ubuntu)
-		echo "FAIBASE UBUNTU UBUNTU_1204_X86" ;;
+		echo "FAIBASE DHCPC UBUNTU UBUNTU_1204_X86" ;;
 	*)
-		echo "FAIBASE UBUNTU" ;;
+		echo "FAIBASE DHCPC UBUNTU" ;;
 esac
 
 #ubuntu and debian should both use grub

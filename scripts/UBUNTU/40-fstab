@@ -1,0 +1,4 @@
+#!/bin/bash
+#Change /boot and /usr to mount read-only
+
+$ROOTCMD perl -pi -e "s/noatime,rw/noatime,ro/g;" /etc/fstab
