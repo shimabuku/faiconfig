@@ -4,11 +4,11 @@
 
 case $HOSTNAME in
 	ubuntu)
-		echo "FAIBASE UBUNTU" ;;
+		echo "FAIBASE UBUNTU UBUNTU_1204_X86" ;;
 	*)
 		echo "FAIBASE UBUNTU" ;;
 esac
 
 #ubuntu and debian should both use grub
-#ifclass -o I386 AMD64 && echo GRUB_PC
+ifclass -o I386 AMD64 && echo GRUB_PC
 exit 0

@@ -1,0 +1,37 @@
+#! /bin/bash
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+### BEGIN SUBROUTINE INFO
+# Provides-Var:    none
+# Requires-Var:    $FAI_ROOT $FAI_ETC_DIR
+# Suggests-Var:    $IPADDR $DOMAIN
+# Short-Description: <task desc.>
+### END SUBROUTINE INFO
+
+skiptask prepareapt
+
+    # ftp and http needs resolv.conf in chroot environment, /etc/hosts is useful
+    # think about using fcopy for these two files
+    [ -f /etc/resolv.conf ] && cp /etc/resolv.conf $FAI_ROOT/etc
+    [ -f /etc/hosts ] && cp /etc/hosts $FAI_ROOT/etc
+    # set hostname in $FAI_ROOT
+    if [ -f /var/run/fai/FAI_INSTALLATION_IN_PROGRESS ]; then
+      echo $HOSTNAME >$FAI_ROOT/etc/hostname
+    fi
+
+
+    # during normal installation, we need sources.list from /etc/apt
+    # currently /target/etc/apt gets overwritten by the contents of /etc/apt from inside the nfsroot
+    #[ $do_init_tasks -eq 1 ] && FAI_ETC_DIR=/etc
+    #[ -d $FAI_ETC_DIR/apt ] && cp -r $FAI_ETC_DIR/apt/* $FAI_ROOT/etc/apt/
+
+    #Add sources.list for Ubuntu
+    fcopy -ri /etc/apt
+
+    rm -f $FAI_ROOT/etc/apt/apt.conf.d/10fai # disable AllowUnauthenticated, which was used in the nfsroot
+    if [ X$FAI_ALLOW_UNSIGNED = X1 ]; then
+	cat <<EOF > $FAI_ROOT/etc/apt/apt.conf.d/10fai
+APT::Get::AllowUnauthenticated "true";
+Aptitude::CmdLine::Ignore-Trust-Violations yes;
+EOF
+    fi
