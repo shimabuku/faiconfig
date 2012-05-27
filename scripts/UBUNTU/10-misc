@@ -5,3 +5,6 @@
 # add a demo user account
 $ROOTCMD adduser --disabled-login --gecos "fai demo user" hccitc
 $ROOTCMD usermod -p "$USERPW" hccitc
+
+#Add sudoers file
+fcopy -vi /etc/sudoers
