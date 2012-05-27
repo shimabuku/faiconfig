@@ -1,0 +1,15 @@
+# example of new config file for setup-storage
+#
+# <type> <mountpoint> <size>   <fs type> <mount options> <misc options>
+
+disk_config disk1 disklabel:msdos bootable:1 fstabkey:uuid
+
+primary /boot    200      ext4  noatime,rw
+logical /        1000     ext4  defaults
+logical /usr     2000     ext4  noatime,rw
+logical /home    500      ext4  defaults
+logical /var/lib 500      ext4  defaults
+logical /var/log 1000     ext4  defaults
+logical /var/tmp 1000     ext4  defaults
+logical /tmp     2000     ext4  defaults
+logical swap     384      swap  rw
