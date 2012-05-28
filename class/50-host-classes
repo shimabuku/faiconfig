@@ -2,6 +2,12 @@
 
 # assign classes to hosts
 
+#FAIBASE: Class needed for a base installation
+#DHCPC: Class to configure network interface for dhcp
+#UBUNTU: Class for Ubuntu installations
+
+#UBUNTU_SERVER_1204_X86: Uses Ubuntu Server 12.04 x86 for base.tgz file
+
 case $HOSTNAME in
 	ubuntu)
 		echo "FAIBASE DHCPC UBUNTU UBUNTU_SERVER_1204_X86" ;;
