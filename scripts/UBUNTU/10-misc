@@ -7,4 +7,4 @@ $ROOTCMD adduser --disabled-login --gecos "fai demo user" hccitc
 $ROOTCMD usermod -p "$USERPW" hccitc
 
 #Add sudoers file
-fcopy -vi /etc/sudoers
+fcopy -viB /etc/sudoers
