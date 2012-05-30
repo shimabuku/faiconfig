@@ -12,7 +12,7 @@ case $HOSTNAME in
 	ubuntu)
 		echo "FAIBASE DHCPC UBUNTU UBUNTU_SERVER_1204_X86" ;;
 	*)
-		echo "FAIBASE DHCPC UBUNTU" ;;
+		echo "FAIBASE DHCPC UBUNTU UBUNTU_SERVER_1204_X86" ;;
 esac
 
 #ubuntu and debian should both use grub
