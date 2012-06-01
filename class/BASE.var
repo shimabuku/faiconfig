@@ -11,5 +11,8 @@ TIMEZONE=Pacific/Honolulu
 # pw is "fai"
 ROOTPW='$1$kBnWcO.E$djxB128U7dMkrltJHPf6d1'
 
+# Directory client will save logs to on the server.
+LOGREMOTEDIR=/var/log/fai
+
 # errors in tasks greater than this value will cause the installation to stop
 STOP_ON_ERROR=700
