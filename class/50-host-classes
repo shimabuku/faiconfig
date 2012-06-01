@@ -2,7 +2,7 @@
 
 # assign classes to hosts
 
-#FAIBASE: Class needed for a base installation
+#BASE: Class needed for a base installation
 #DHCPC: Class to configure network interface for dhcp
 #UBUNTU: Class for Ubuntu installations
 
@@ -10,9 +10,9 @@
 
 case $HOSTNAME in
 	ubuntu)
-		echo "FAIBASE DHCPC UBUNTU UBUNTU_SERVER_1204_X86" ;;
+		echo "BASE DHCPC UBUNTU UBUNTU_SERVER_1204_X86" ;;
 	*)
-		echo "FAIBASE DHCPC UBUNTU UBUNTU_SERVER_1204_X86" ;;
+		echo "BASE DHCPC UBUNTU UBUNTU_SERVER_1204_X86" ;;
 esac
 
 #ubuntu and debian should both use grub
